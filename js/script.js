@@ -1,6 +1,6 @@
 'use strict';
 
-const CV_FILE_ID = '18ZRel2enGR9QxSmOWof7r6_eNIc0gbX3';
+const CV_FILE_PATH = 'resume/Resume_ArkarPyaePhyo.pdf';
 
 function initDownloadButton() {
     const link = document.getElementById('download-cv');
@@ -8,12 +8,11 @@ function initDownloadButton() {
 
     link.addEventListener('click', (event) => {
         event.preventDefault();
-        const downloadUrl = `https://drive.google.com/uc?export=download&id=${CV_FILE_ID}`;
         const tempLink = document.createElement('a');
-        tempLink.href = downloadUrl;
+        tempLink.href = CV_FILE_PATH;
         tempLink.target = '_blank';
         tempLink.rel = 'noopener';
-        tempLink.download = 'Arkar_Pyae_Phyo_CV.pdf';
+        tempLink.download = 'Resume_ArkarPyaePhyo.pdf';
         document.body.appendChild(tempLink);
         tempLink.click();
         tempLink.remove();
