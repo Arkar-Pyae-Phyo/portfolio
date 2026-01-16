@@ -1,3 +1,20 @@
+/* --- Cursor Spotlight Motion Blur Effect --- */
+#cursor-spotlight {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    left: 50%;
+    top: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,123,255,0.22) 0%, rgba(0,123,255,0.10) 60%, rgba(0,123,255,0) 100%);
+    filter: blur(120px);
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.25s cubic-bezier(.4,0,.2,1);
+    will-change: left, top, opacity;
+}
 :root {
     --background: #000000;
     --panel-bg: rgba(15, 23, 42, 0.75);

@@ -116,25 +116,89 @@ function initCursorHalo() {
     const root = document.documentElement;
     if (!root) return;
 
-    const setPosition = (x, y) => {
-        root.style.setProperty('--cursor-x', `${x}px`);
-        root.style.setProperty('--cursor-y', `${y}px`);
-    };
+    // Create the spotlight element
+    let spotlight = document.getElementById('cursor-spotlight');
+    if (!spotlight) {
+        spotlight = document.createElement('div');
+        spotlight.id = 'cursor-spotlight';
+        spotlight.style.position = 'fixed';
+        spotlight.style.pointerEvents = 'none';
+        spotlight.style.zIndex = '9999';
+        spotlight.style.width = '600px';
+        spotlight.style.height = '600px';
+        spotlight.style.borderRadius = '50%';
+        spotlight.style.background = 'radial-gradient(circle, rgba(0,123,255,0.22) 0%, rgba(0,123,255,0.10) 60%, rgba(0,123,255,0) 100%)';
+        spotlight.style.filter = 'blur(120px)';
+        spotlight.style.transition = 'opacity 0.25s cubic-bezier(.4,0,.2,1)';
+        spotlight.style.opacity = '0';
+        spotlight.style.transform = 'translate(-50%, -50%)';
+        document.body.appendChild(spotlight);
+    }
+
+    let lastX = window.innerWidth / 2;
+    let lastY = window.innerHeight / 2;
+    let visible = false;
+
+    function moveSpotlight(x, y) {
+        // Use requestAnimationFrame for smoothness
+        spotlight.style.left = `${x}px`;
+        spotlight.style.top = `${y}px`;
+    }
+
+    function showSpotlight() {
+        if (!visible) {
+            spotlight.style.opacity = '1';
+            visible = true;
+        }
+    }
+
+    function hideSpotlight() {
+        if (visible) {
+            spotlight.style.opacity = '0';
+            visible = false;
+        }
+    }
+
+    let rafId = null;
+    let targetX = lastX;
+    let targetY = lastY;
+
+    function animate() {
+        // Motion blur: interpolate position
+        lastX += (targetX - lastX) * 0.25;
+        lastY += (targetY - lastY) * 0.25;
+        moveSpotlight(lastX, lastY);
+        rafId = requestAnimationFrame(animate);
+    }
 
     const handlePointerMove = (event) => {
-        setPosition(event.clientX, event.clientY);
-        root.style.setProperty('--cursor-opacity', '1');
+        targetX = event.clientX;
+        targetY = event.clientY;
+        showSpotlight();
+        if (!rafId) {
+            animate();
+        }
     };
 
     const handlePointerOut = (event) => {
         if (!event.relatedTarget) {
-            root.style.setProperty('--cursor-opacity', '0');
+            hideSpotlight();
+            if (rafId) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+            }
         }
     };
 
     window.addEventListener('pointermove', handlePointerMove, { passive: true });
     window.addEventListener('pointerout', handlePointerOut, { passive: true });
-    window.addEventListener('blur', () => root.style.setProperty('--cursor-opacity', '0'), { passive: true });
+    window.addEventListener('blur', () => {
+        hideSpotlight();
+        if (rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+        }
+    }, { passive: true });
 }
 
 function init() {
