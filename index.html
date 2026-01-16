@@ -1,678 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
-<head  >        
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arkar Pyae Phyo - Modern Tech Portfolio</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Arkar Pyae Phyo - Full Stack Developer & Software Engineer. Expert in Python, JavaScript, React, Node.js, and modern web technologies.">
-    <meta name="keywords" content="Arkar Pyae Phyo, Full Stack Developer, Software Engineer, Python, JavaScript, React, Portfolio">
+    <title>Arkar Pyae Phyo — Cloud Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Arkar Pyae Phyo, a junior cloud and ML engineer focused on building resilient, production-ready systems.">
     <meta name="author" content="Arkar Pyae Phyo">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Arkar Pyae Phyo - Modern Tech Portfolio">
-    <meta property="og:description" content="Full Stack Developer & Software Engineer specializing in modern web technologies">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://arkarpp.dev">
-    
-    <!-- Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- Favicon -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-dNMnEf6rjXwzAV/QXp1S8MaqkOawx2UY8ailqXFz3vGN9VOGBev5nYeD1yfknhk+aoCA8DmFumiQJFDaB1zlrw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="navbar-container">
-            <a href="#home" class="navbar-brand">Akpp☁️</a>
-            
-            <ul class="navbar-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#achievements" class="nav-link">Achievements</a></li>
-                <li><a href="#certificates" class="nav-link">Certificates</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            
-            <button class="nav-toggle" id="nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-        <div class="progress-bar" id="progress-bar"></div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-terminal" data-aos="fade-up" data-aos-duration="1000">
-            <div class="terminal-header">
-                <div class="terminal-buttons">
-                    <div class="terminal-button close"></div>
-                    <div class="terminal-button minimize"></div>
-                    <div class="terminal-button maximize"></div>
-                </div>
-                <div class="terminal-title">@portfolio:~</div>
+    <div class="page-shell">
+        <aside class="profile-panel">
+            <div class="profile-intro">
+                <h1 class="profile-name">Arkar Pyae Phyo</h1>
+                <p class="profile-eyebrow">Junior Cloud / ML Engineer</p>
+                <p class="profile-subheading">Mae Fah Luang University, Chiang Rai, Thailand  Bachelor of Engineering in Digital and Communication Engineering</p>
             </div>
-            
-            <div class="terminal-content">
-                <div class="command-line">
-                    <span class="prompt">➜ ~</span>
-                    <span class="typing-animation" data-text="whoami">whoami</span>
-                </div>
-                
-                <h1 class="hero-name">ARKAR PYAE PHYO</h1>
 
-                <p class="hero-title">Junior Cloud Engineer & Developer</p>
-                
-                <div class="command-line">
-                    <span class="prompt">➜ ~</span>
-                    <span class="typing-animation" data-text="ls skills/">ls skills/</span>
-                </div>
-                
-                <div class="hero-skills">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">HTML</span>
-                    <span class="skill-tag">CSS</span>
-                    <span class="skill-tag">SQL</span>
-                </div>
-                
-                <div class="hero-cta">
-                    <a href="#" onclick="downloadCV()" class="cta-button cta-primary">
-                        <i class="fas fa-download"></i>
-                        Download CV
-                    </a>
-                    <a href="#contact" class="cta-button cta-secondary">
-                        <i class="fas fa-phone"></i>
-                        Contact Me
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">About</h2>
-                <p class="section-subtitle">Get to know me better</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="profile-section">  
-                    <div class="education-card" data-aos="fade-right" data-aos-delay="200">
-                        <h3>Education</h3>
-                        <div class="education-info">
-                            <h5>Mae Fah Luang University, Chiang Rai</h5>
-                            <p class="education-period">August 2023 - PRESENT</p>
-                            <p class="education-major">Bachelor of Engineering in Digital and Communication Engineering</p>
-                            <p class="education-gpa">Current GPAX : 4.0</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-terminal" data-aos="fade-left">
-                    <div class="terminal-content">
-                        <div class="about-command">
-                            <span class="prompt">➜ ~</span>
-                            <span class="command">cat about_me.txt</span>
-                        </div>
-                        <div class="about-text-content">
-                            <p>
-                                I am a Bachelor of Engineering student at Mae Fah Luang University, specializing in Digital and Communication Engineering. Alongside my studies, I work as a Junior Backend Developer at SkillFusion, where I support development projects and create educational content. With a strong interest in cloud computing, I aim to build scalable and secure systems that solve real-world challenges. I am eager to keep learning, growing, and contributing to projects that push technology forward and create meaningful impact.
-                            </p>
-                        </div>
-                        
-                        <div class="stats">
-                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
-                                <span class="stat-number">3+</span>
-                                <span class="stat-label">Languages</span>
-                            </div>
-                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
-                                <span class="stat-number">10+</span>
-                                <span class="stat-label">Projects Completed</span>
-                            </div>
-                            <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
-                                <span class="stat-number">5+</span>
-                                <span class="stat-label">Technologies</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h3 class="section-title">Technical Skills</h3>
-                <p class="section-subtitle">Proficient in cloud platforms, programming, and DevOps tools with a strong foundation in networking and security.</p>
-            </div>
-            
-            <div class="skills-grid">
-                <div class="skill-category-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3 class="category-title">PROGRAMMING LANGUAGES</h3>
-                    </div>
-                    <div class="skills-logo-grid">
-                        <div class="skill-logo-item">
-                            <div class="skill-icon python">
-                                <i class="fab fa-python"></i>
-                            </div>
-                            <span class="skill-name">Python</span>
-                        </div>
-                        
-                        <div class="skill-logo-item">
-                            <div class="skill-icon java">
-                                <i class="fab fa-java"></i>
-                            </div>
-                            <span class="skill-name">Java</span>
-                        </div>
-                        
-                        <div class="skill-logo-item">
-                            <div class="skill-icon csharp">
-                                <i class="fab fa-microsoft"></i>
-                            </div>
-                            <span class="skill-name">C#</span>
-                        </div>
-                        
-                        <div class="skill-logo-item">
-                            <div class="skill-icon html">
-                                <i class="fab fa-html5"></i>
-                            </div>
-                            <span class="skill-name">HTML</span>
-                        </div>
-                        
-                        <div class="skill-logo-item">
-                            <div class="skill-icon css">
-                                <i class="fab fa-css3-alt"></i>
-                            </div>
-                            <span class="skill-name">CSS</span>
-                        </div>
-                        
-                        <div class="skill-logo-item">
-                            <div class="skill-icon javascript">
-                                <i class="fab fa-js-square"></i>
-                            </div>
-                            <span class="skill-name">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="skill-category-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3 class="category-title">TECHNOLOGIES</h3>
-                    </div>
-                    <div class="skills-logo-grid">
-                        <div class="skill-logo-item">
-                            <div class="skill-icon linux">
-                                <i class="fab fa-linux"></i>
-                            </div>
-                            <span class="skill-name">Linux</span>
-                        </div>
-                        
-                        <div class="skill-logo-item">
-                            <div class="skill-icon docker">
-                                <i class="fab fa-docker"></i>
-                            </div>
-                            <span class="skill-name">Docker</span>
-                        </div>
-                        
-                        <div class="skill-logo-item">
-                            <div class="skill-icon terraform">
-                                <i class="fas fa-cube"></i>
-                            </div>
-                            <span class="skill-name">Terraform</span>
-                        </div>
-                        
-                        <div class="skill-logo-item">
-                            <div class="skill-icon git">
-                                <i class="fab fa-git-alt"></i>
-                            </div>
-                            <span class="skill-name">Git</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Experience Section -->
-    <section id="experience" class="section">
-        <div class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Work Experience</h2>
-                <p class="section-subtitle">Highlights of my work experience</p>
-            </div>
-            
-            <div class="experience-content">
-                <div class="experience-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="experience-header">
-                        <div class="company-info">
-                            <h3><span class="prompt">➜ </span>
-                            <a href="https://skillfusion.tech/" class="company-name">skillfusion.tech</a></h3>
-                        </div>
-                        <h4 class="position-title">Junior Backend Developer</h4>
-                        <div class="experience-period">
-                            <span>December 2023 - Present</span>
-                        </div>
-                    </div>
-                        
-                        <ul class="achievement-list">
-                            <li class="achievement-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Developed and maintained the backend for an online education platform, enabling students to access video courses and learning materials.</span>
-                            </li>
-                            <li class="achievement-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Implemented secure authentication and course management features for lecturers to create and manage their classes.</span>
-                            </li>
-                            <li class="achievement-item">
-                                <i class="fas fa-check-circle"></i>
-                                <span>Optimized database queries and APIs, improving system performance and user experience.</span>
-                            </li>
-                        </ul>
-                        
-                        <div class="tech-stack">
-                            <h5>Technologies Used:</h5>
-                            <div class="tech-tags">
-                                <span class="tech-tag">Backend Development</span>
-                                <span class="tech-tag">API Development</span>
-                                <span class="tech-tag">Database Optimization</span>
-                                <span class="tech-tag">Authentication</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Achievements Section -->
-    <section id="achievements" class="section">
-        <div class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Achievements</h2>
-                <p class="section-subtitle">Recognition and awards from competitions and workshops</p>
-            </div>
-            
-            <div class="achievements-grid">
-                <div class="achievement-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="achievement-image-container">
-                        <div class="achievement-image-placeholder">
-                            <img src="images/photo_2025-09-12_18-47-09.jpg" class="award-image">
-                        </div>
-                    </div>
-                    <div class="achievement-content">
-                        <div class="achievement-rank first-runner">1st Runner-Up</div>
-                        <h3 class="achievement-title">Code for Hope Hackathon</h3>
-                        <div class="achievement-date">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>June 26-27, 2025</span>
-                        </div>
-                        <div class="achievement-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Payap University, Chiang Mai, Thailand</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="achievement-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="achievement-image-container">
-                        <div class="achievement-image-placeholder">
-                            <img src="images/photo_2025-09-12_18-47-11.jpg" class="award-image">
-                        </div>
-                    </div>
-                    <div class="achievement-content">
-                        <div class="achievement-rank winner">Winner</div>
-                        <h3 class="achievement-title">AR/VR Joint International Workshop & Competition (JIWC) 2024</h3>
-                        <div class="achievement-date">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>March 23 – April 6, 2024</span>
-                        </div>
-                        <div class="achievement-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Mae Fah Luang University, Chiang Rai, Thailand</span>
-                        </div>
-                        </div>
-                </div>
-                
-                <div class="achievement-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="achievement-image-container">
-                        <div class="achievement-image-placeholder">
-                            <img src="images/photo_2025-09-12_18-47-06.jpg"  class="award-image">
-                        </div>
-                    </div>
-                    <div class="achievement-content">
-                        <div class="achievement-rank second-runner">2nd Runner-Up</div>
-                        <h3 class="achievement-title">AI/GAME Joint International Workshop and Competition (JIWC) 2025</h3>
-                        <div class="achievement-date">
-                            <i class="fas fa-calendar-alt"></i>
-                            <span>August 9-24, 2025</span>
-                        </div>
-                        <div class="achievement-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Mae Fah Luang University, Chiang Rai, Thailand</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certificates Section -->
-    <section id="certificates" class="section">
-        <div class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Certificates</h2>
-                <p class="section-subtitle">Professional certifications and achievements</p>
-            </div>
-            
-            <div class="certificates-carousel" data-aos="fade-up" data-aos-delay="200">
-                <div class="carousel-container">
-                    
-                    <!-- Navigation Buttons -->
-                    <button class="carousel-btn carousel-btn-prev" id="prevBtn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    
-                    <button class="carousel-btn carousel-btn-next" id="nextBtn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                    
-                    <!-- Certificate Stack -->
-                    <div class="certificate-stack">
-                        
-                        <div class="certificate-item active" data-index="0">
-                            <div class="certificate-photo">
-                                <img src="images/HCCDP-Solution Architectures.png" alt="Certificate 1">
-                            </div>
-                            <div class="certificate-details">
-                                <h4>HCCDP-Solution Architectures</h4>
-                                <p>Credential ID - HWENDCCCDP623119</p>
-                            </div>
-                        </div>
-
-                        <div class="certificate-item" data-index="1">
-                            <div class="certificate-photo">
-                                <img src="images/HCCDA - Cloud Native.png" alt="Certificate 2">
-                            </div>
-                            <div class="certificate-details">
-                                <h4>HCCDA-Cloud Native</h4>
-                                <p>Credential ID - HWENDCCNDA030722</p>
-                            </div>
-                        </div>
-
-                        <div class="certificate-item" data-index="2">
-                            <div class="certificate-photo">
-                                <img src="images/hccda-tech essentials.png" alt="Certificate 3">
-                            </div>
-                            <div class="certificate-details">
-                                <h4>HCCDA-Tech Essentials</h4>
-                                <p>Credential ID - HWDCTEDA731963</p>
-                            </div>
-                        </div>
-
-                        <div class="certificate-item" data-index="3">
-                            <div class="certificate-photo">
-                                <img src="images/HCCDA Ai.png" alt="Certificate 4">
-                            </div>
-                            <div class="certificate-details">
-                                <h4>HCCDA-Ai</h4>
-                                <p>Credential ID - HWENDCAIDA093639</p>
-                            </div>
-                        </div>
-
-
-                        <div class="certificate-item" data-index="4">
-                            <div class="certificate-photo">
-                                <img src="images/HCCDP-Cloud Migration.png" alt="Certificate 7">
-                            </div>
-                            <div class="certificate-details">
-                                <h4>HCCDP-Cloud Migration</h4>
-                                <p>Credential ID - HWENDCCCDP770815</p>
-                            </div>
-                        </div>
-
-
-                        <div class="certificate-item" data-index="5">
-                            <div class="certificate-photo">
-                                <img src="images/Cybersecurity_Foundation_Student_Certificate (1)_page-0001.jpg" alt="Certificate 5">
-                            </div>
-                            <div class="certificate-details">
-                                <h4>Cybersecurity Foundation</h4>
-                                <p>Palo Alto Networks Cyber Security Academy</p>
-                            </div>
-                        </div>
-
-                        <div class="certificate-item" data-index="6">
-                            <div class="certificate-photo">
-                                <img src="images/NetAcad Learning Transcript_page-0001.jpg" alt="Certificate 6">
-                            </div>
-                            <div class="certificate-details">
-                                <h4>Introduction to Cyber Security</h4>
-                                <p>CISCO Networking Academy</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Indicators -->
-                    <div class="carousel-indicators">
-                        <span class="indicator active" data-index="0"></span>
-                        <span class="indicator" data-index="1"></span>
-                        <span class="indicator" data-index="2"></span>
-                        <span class="indicator" data-index="3"></span>
-                        <span class="indicator" data-index="4"></span>
-                        <span class="indicator" data-index="5"></span>
-                        <span class="indicator" data-index="6"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="section-container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's connect and collaborate on exciting projects</p>
-            </div>
-            
-            <div class="contact-content">
-                <div class="contact-terminal" data-aos="fade-up" data-aos-delay="200">
-                    <div class="terminal-header">
-                        <div class="terminal-buttons">
-                            <div class="terminal-button close"></div>
-                            <div class="terminal-button minimize"></div>
-                            <div class="terminal-button maximize"></div>
-                        </div>
-                        <div class="terminal-title">contact.sh</div>
-                    </div>
-                    
-                    <div class="terminal-content">
-                        <div class="command-line">
-                            <span class="prompt">➜ ~</span>
-                            <span class="command">cat contact_info.txt</span>
-                        </div>
-                        
-                        <div class="contact-info-grid">
-                            <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
-                                <div class="contact-icon">
-                                    <i class="fas fa-envelope"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Email</h4>
-                                    <p>akpp.arkarpyaephyo@gmail.com</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
-                                <div class="contact-icon">
-                                    <i class="fas fa-phone"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Phone</h4>
-                                    <p>+66 45742713</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
-                                <div class="contact-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Location</h4>
-                                    <p>Thailand</p>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
-                                <div class="contact-icon">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div class="contact-text">
-                                    <h4>Response Time</h4>
-                                    <p>Within 24 hours</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="social-section" data-aos="fade-up" data-aos-delay="500">
-                            <h4 class="social-title">Connect with me</h4>
-                            <div class="social-links">
-                                <a href="https://www.linkedin.com/in/arkar-pyae-phyo" class="social-link" title="LinkedIn">
-                                    <i class="fab fa-linkedin"></i>
-                                    <span>LinkedIn</span>
-                                </a>
-                                <a href="https://github.com/Arkar-Pyae-Phyo" class="social-link" title="GitHub">
-                                    <i class="fab fa-github"></i>
-                                    <span>GitHub</span>
-                                </a>
-                                <a href="https://www.facebook.com/arkar.pyae.phyo.694912" class="social-link" title="Facebook">
-                                    <i class="fab fa-facebook"></i>
-                                    <span>Facebook</span>
-                                </a>
-                                <a href="https://wa.me/+6645742713" class="social-link" title="WhatsApp">
-                                    <i class="fab fa-whatsapp"></i>
-                                    <span>WhatsApp</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p class="footer-text">
-                © 2025 Arkar Pyae Phyo — Growing with Every Commit
+            <p class="profile-resume-link">
+                <a href="#" id="download-cv" class="resume-link">View Full Résumé</a>
             </p>
-        </div>
+
+            <nav class="section-nav" aria-label="Section navigation">
+                <a class="nav-link active" href="#about">About</a>
+                <a class="nav-link" href="#achievements">Achievements</a>
+                <a class="nav-link" href="#certificates">Certificates</a>
+            </nav>
+
+            <div class="profile-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Location</span>
+                    <span class="meta-value">Chiang Rai, Thailand</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Email</span>
+                    <a class="meta-value" href="mailto:akpp.arkarpyaephyo@gmail.com">akpp.arkarpyaephyo@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="social-links" aria-label="Social links">
+                <a href="https://github.com/Arkar-Pyae-Phyo" aria-label="GitHub">
+                    <img src="svg/github.svg" alt="GitHub">
+                </a>
+                <a href="https://www.linkedin.com/in/arkar-pyae-phyo" aria-label="LinkedIn">
+                    <img src="svg/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://www.facebook.com/arkar.pyae.phyo.694912" aria-label="Facebook">
+                    <img src="svg/facebook.svg" alt="Facebook">
+                </a>
+                <a href="https://www.instagram.com/akpp_11trackk/" aria-label="Instagram">
+                    <img src="svg/instagram.svg" alt="Instagram">
+                </a>
+                <a href="https://discord.com/users/1193816675175366671" aria-label="Discord">
+                    <img src="svg/discord.svg" alt="Discord">
+                </a>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <section id="about" class="panel panel-plain" aria-label="About">
+                <div class="panel-body about-copy">
+                    <p>I’m a junior Cloud / ML engineer and international engineering student at Mae Fah Luang University, focused on building secure, scalable systems that bring machine learning into the real world. I enjoy working across the stack—from backend services and data pipelines to cloud infrastructure—turning ideas into reliable products that are easy to operate and improve over time.</p>
+
+                    <p>Recently, I’ve been building ML-driven projects such as a dataset-based memory training assistant for people with Parkinson’s, where I implemented end-to-end data pipelines (cleaning, train/validation splits, leakage checks), integrated model outputs via API, and added privacy-aware logging and basic monitoring. I’m also developing an AI exam proctoring web platform, owning Python components like event logging, evidence screenshots, and webcam-based checks using OpenCV.</p>
+
+                    <p>On the infrastructure side, I’m comfortable with Linux and Git, and I work with tools like Docker, Kubernetes, Terraform, Jenkins, and Apache Spark to deploy and scale systems with consistency. I’m a Grand Prize Winner in the Huawei ICT Competition (Cloud Track) and hold multiple Huawei Cloud certifications—reflecting my commitment to strong cloud fundamentals and continuous learning.</p>
+
+                    <p>If you’re looking for someone who can connect ML, backend engineering, and cloud deployment into practical, production-ready solutions, I’d love to collaborate.</p>
+                </div>
+            </section>
+
+            <section id="achievements" class="panel panel-borderless" aria-labelledby="achievements-title">
+                <div class="panel-heading">
+                    <span class="panel-tag">Achievements</span>
+                    <h2 id="achievements-title">Recent Highlights</h2>
+                </div>
+                <div class="achievements-grid">
+                    <article class="achievement-card">
+                        <div class="achievement-media">
+                            <img src="images/huawei.jpg" alt="Huawei National ICT Competition Grand Prize" loading="lazy">
+                        </div>
+                        <div class="achievement-content">
+                            <span class="achievement-meta">Grand Prize • 2025 – 2026 • National Round</span>
+                            <h3>Huawei National ICT Competition (Cloud Track)</h3>
+                            <p class="achievement-location">Bangkok, Thailand</p>
+                        </div>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-media">
+                            <img src="images/photo_2025-09-12_18-47-09.jpg" alt="Code for Hope Hackathon 1st Runner Up" loading="lazy">
+                        </div>
+                        <div class="achievement-content">
+                            <span class="achievement-meta">1st Runner-Up • June 2025</span>
+                            <h3>Code for Hope Hackathon</h3>
+                            <p class="achievement-location">Payap University, Chiang Mai, Thailand</p>
+                        </div>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-media">
+                            <img src="images/photo_2025-09-12_18-47-11.jpg" alt="AR/VR JIWC 2024 Winner" loading="lazy">
+                        </div>
+                        <div class="achievement-content">
+                            <span class="achievement-meta">Winner • April 2024</span>
+                            <h3>AR/VR Joint International Workshop &amp; Competition (JIWC)</h3>
+                            <p class="achievement-location">Mae Fah Luang University, Thailand</p>
+                        </div>
+                    </article>
+
+                    <article class="achievement-card">
+                        <div class="achievement-media">
+                            <img src="images/photo_2025-09-12_18-47-06.jpg" alt="AI/GAME JIWC 2025 Second Runner-Up" loading="lazy">
+                        </div>
+                        <div class="achievement-content">
+                            <span class="achievement-meta">2nd Runner-Up • August 2025</span>
+                            <h3>AI/Game Joint International Workshop &amp; Competition (JIWC)</h3>
+                            <p class="achievement-location">Mae Fah Luang University, Thailand</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="certificates" class="panel panel-borderless" aria-labelledby="certificates-title">
+                <div class="panel-heading">
+                    <span class="panel-tag">Certificates</span>
+                    <h2 id="certificates-title">Verified Expertise</h2>
+                </div>
+                <div class="certificate-carousel" aria-label="Certificate carousel">
+                    <div class="carousel-stage">
+                        <div class="carousel-track">
+                            <article class="certificate-slide active" data-index="0">
+                                <div class="certificate-visual">
+                                    <img src="images/HCCDP-Solution Architectures.png" alt="HCCDP Solution Architectures certificate" loading="lazy">
+                                </div>
+                                <div class="certificate-caption">
+                                    <h3>HCCDP — Solution Architectures</h3>
+                                    <p>Credential ID — HWENDCCCDP623119</p>
+                                </div>
+                            </article>
+
+                            <article class="certificate-slide" data-index="1">
+                                <div class="certificate-visual">
+                                    <img src="images/HCIA_Cloud_Service.jpg" alt="HCIA Cloud Service certificate" loading="lazy">
+                                </div>
+                                <div class="certificate-caption">
+                                    <h3>HCIA — Cloud Service</h3>
+                                    <p>Huawei Certified ICT Associate</p>
+                                </div>
+                            </article>
+
+                            <article class="certificate-slide" data-index="2">
+                                <div class="certificate-visual">
+                                    <img src="images/HCIA_Iot.jpg" alt="HCIA IoT certificate" loading="lazy">
+                                </div>
+                                <div class="certificate-caption">
+                                    <h3>HCIA — IoT</h3>
+                                    <p>Huawei Certified ICT Associate</p>
+                                </div>
+                            </article>
+
+                            <article class="certificate-slide" data-index="3">
+                                <div class="certificate-visual">
+                                    <img src="images/HCCDA - Cloud Native.png" alt="HCCDA Cloud Native certificate" loading="lazy">
+                                </div>
+                                <div class="certificate-caption">
+                                    <h3>HCCDA — Cloud Native</h3>
+                                    <p>Credential ID — HWENDCCNDA030722</p>
+                                </div>
+                            </article>
+
+                            <article class="certificate-slide" data-index="4">
+                                <div class="certificate-visual">
+                                    <img src="images/hccda-tech essentials.png" alt="HCCDA Tech Essentials certificate" loading="lazy">
+                                </div>
+                                <div class="certificate-caption">
+                                    <h3>HCCDA — Tech Essentials</h3>
+                                    <p>Credential ID — HWDCTEDA731963</p>
+                                </div>
+                            </article>
+
+                            <article class="certificate-slide" data-index="5">
+                                <div class="certificate-visual">
+                                    <img src="images/HCCDA Ai.png" alt="HCCDA AI certificate" loading="lazy">
+                                </div>
+                                <div class="certificate-caption">
+                                    <h3>HCCDA — AI</h3>
+                                    <p>Credential ID — HWENDCAIDA093639</p>
+                                </div>
+                            </article>
+
+                            <article class="certificate-slide" data-index="6">
+                                <div class="certificate-visual">
+                                    <img src="images/HCCDP-Cloud Migration.png" alt="HCCDP Cloud Migration certificate" loading="lazy">
+                                </div>
+                                <div class="certificate-caption">
+                                    <h3>HCCDP — Cloud Migration</h3>
+                                    <p>Credential ID — HWENDCCCDP770815</p>
+                                </div>
+                            </article>
+
+                            <article class="certificate-slide" data-index="7">
+                                <div class="certificate-visual">
+                                    <img src="images/Cybersecurity_Foundation_Student_Certificate (1)_page-0001.jpg" alt="Cybersecurity Foundation certificate" loading="lazy">
+                                </div>
+                                <div class="certificate-caption">
+                                    <h3>Cybersecurity Foundation</h3>
+                                    <p>Palo Alto Networks Cybersecurity Academy</p>
+                                </div>
+                            </article>
+
+                            <article class="certificate-slide" data-index="8">
+                                <div class="certificate-visual">
+                                    <img src="images/NetAcad Learning Transcript_page-0001.jpg" alt="Cisco Introduction to Cyber Security certificate" loading="lazy">
+                                </div>
+                                <div class="certificate-caption">
+                                    <h3>Introduction to Cyber Security</h3>
+                                    <p>Cisco Networking Academy</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="page-footer">
+        <p>© 2026 Arkar Pyae Phyo</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="js/script.js"></script>
-    
-    <!-- Certificate Carousel Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const certificates = document.querySelectorAll('.certificate-item');
-            const indicators = document.querySelectorAll('.indicator');
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            let currentIndex = 0;
-            
-            function updateCarousel() {
-                certificates.forEach((cert, index) => {
-                    cert.classList.remove('active', 'prev', 'next');
-                    
-                    if (index === currentIndex) {
-                        cert.classList.add('active');
-                    } else if (index === (currentIndex - 1 + certificates.length) % certificates.length) {
-                        cert.classList.add('prev');
-                    } else if (index === (currentIndex + 1) % certificates.length) {
-                        cert.classList.add('next');
-                    }
-                });
-                
-                // Update indicators
-                indicators.forEach((indicator, index) => {
-                    indicator.classList.toggle('active', index === currentIndex);
-                });
-            }
-            
-            function nextCertificate() {
-                currentIndex = (currentIndex + 1) % certificates.length;
-                updateCarousel();
-            }
-            
-            function prevCertificate() {
-                currentIndex = (currentIndex - 1 + certificates.length) % certificates.length;
-                updateCarousel();
-            }
-            
-            function goToCertificate(index) {
-                currentIndex = index;
-                updateCarousel();
-            }
-            
-            // Event listeners
-            if (nextBtn) {
-                nextBtn.addEventListener('click', nextCertificate);
-            }
-            
-            if (prevBtn) {
-                prevBtn.addEventListener('click', prevCertificate);
-            }
-            
-            // Indicator clicks
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => goToCertificate(index));
-            });
-            
-            // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowLeft') {
-                    prevCertificate();
-                } else if (e.key === 'ArrowRight') {
-                    nextCertificate();
-                }
-            });
-            
-            // Auto-play (optional - uncomment to enable)
-            // setInterval(nextCertificate, 5000);
-            
-            // Initialize carousel
-            updateCarousel();
-        });
-    </script>
 </body>
 </html>
