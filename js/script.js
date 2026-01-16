@@ -122,39 +122,20 @@ function initCursorHalo() {
         root.style.setProperty('--cursor-y', `${y}px`);
     };
 
-    let fadeTimeout;
-
     const handlePointerMove = (event) => {
         setPosition(event.clientX, event.clientY);
-        root.style.setProperty('--cursor-opacity', '0.9');
-        if (fadeTimeout) clearTimeout(fadeTimeout);
-        fadeTimeout = setTimeout(() => {
-            root.style.setProperty('--cursor-opacity', '0.35');
-        }, 600);
+        root.style.setProperty('--cursor-opacity', '1');
     };
 
     const handlePointerOut = (event) => {
         if (!event.relatedTarget) {
-            if (fadeTimeout) {
-                clearTimeout(fadeTimeout);
-                fadeTimeout = null;
-            }
             root.style.setProperty('--cursor-opacity', '0');
         }
     };
 
     window.addEventListener('pointermove', handlePointerMove, { passive: true });
     window.addEventListener('pointerout', handlePointerOut, { passive: true });
-    window.addEventListener('blur', () => {
-        if (fadeTimeout) {
-            clearTimeout(fadeTimeout);
-            fadeTimeout = null;
-        }
-        root.style.setProperty('--cursor-opacity', '0');
-    }, { passive: true });
-
-    setPosition(window.innerWidth / 2, window.innerHeight / 2);
-    root.style.setProperty('--cursor-opacity', '0.35');
+    window.addEventListener('blur', () => root.style.setProperty('--cursor-opacity', '0'), { passive: true });
 }
 
 function init() {
