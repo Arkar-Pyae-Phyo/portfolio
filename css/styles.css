@@ -332,7 +332,12 @@ a:hover {
 .panel-heading h2 {
     font-size: clamp(1.6rem, 2.6vw, 2rem);
     letter-spacing: -0.02em;
-    color: var(--accent);
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(96, 165, 250, 0.3);
+    filter: drop-shadow(0 0 20px rgba(167, 139, 250, 0.2));
 }
 
 .panel-body {
@@ -494,18 +499,38 @@ a:hover {
     transition: transform 0.5s cubic-bezier(0.33, 1, 0.68, 1), opacity 0.4s ease;
     display: grid;
     grid-template-rows: minmax(0, 1fr) auto;
-    background: rgba(15, 23, 42, 0.95);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.08) 0%, rgba(167, 139, 250, 0.08) 100%);
     border-radius: var(--radius-md);
-    border: 1px solid rgba(148, 163, 184, 0.16);
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: absolute;
     box-shadow: 0 35px 60px rgba(9, 14, 31, 0.45);
+}
+
+.certificate-slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-md);
+    padding: 1px;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #ec4899 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.25;
+    transition: opacity 0.3s ease;
 }
 
 .certificate-slide.active {
     transform: translate3d(-50%, 0, 0) scale(1);
     opacity: 1;
     pointer-events: auto;
-    cursor: default;
+    cursor: zoom-in;
     z-index: 5;
+}
+
+.certificate-slide.active::before {
+    opacity: 0.5;
 }
 
 .certificate-slide.prev {
@@ -548,6 +573,9 @@ a:hover {
     display: grid;
     gap: 0.6rem;
     text-align: center;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(9, 14, 31, 0.98) 100%);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(96, 165, 250, 0.2);
 }
 
 .certificate-caption h3 {
@@ -617,4 +645,219 @@ a:hover {
     .certificate-slide {
         width: 100%;
     }
+}
+
+/* --- Projects Section --- */
+.projects-section {
+    margin-bottom: var(--spacing-xl);
+}
+
+.projects-section:last-child {
+    margin-bottom: 0;
+}
+
+.projects-category {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #ffffff;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 2px solid rgba(96, 165, 250, 0.3);
+}
+
+.projects-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.project-card {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(167, 139, 250, 0.05) 100%);
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    border-radius: var(--radius-md);
+    padding: var(--spacing-lg);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(96, 165, 250, 0.1), 
+                0 0 0 1px rgba(96, 165, 250, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-md);
+    padding: 1px;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #ec4899 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
+    box-shadow: 0 12px 40px rgba(96, 165, 250, 0.25), 
+                0 0 0 1px rgba(96, 165, 250, 0.3),
+                0 0 60px rgba(167, 139, 250, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover::before {
+    opacity: 0.6;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 70%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.project-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.project-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xs);
+}
+
+.project-links-icons {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border: 1px solid rgba(96, 165, 250, 0.3);
+    border-radius: var(--radius-sm);
+    transition: all 0.2s ease;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(167, 139, 250, 0.1) 100%);
+}
+
+.project-link img {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    transition: all 0.2s ease;
+}
+
+.project-link:hover {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(167, 139, 250, 0.25) 100%);
+    border-color: rgba(96, 165, 250, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.3);
+}
+
+.project-link:hover img {
+    opacity: 1;
+    filter: brightness(0) invert(1) drop-shadow(0 0 4px rgba(255, 255, 255, 0.5));
+}
+
+.project-meta {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(147, 197, 253, 0.9);
+    margin: 0;
+    text-align: right;
+    white-space: nowrap;
+    padding: 0.25rem 0.75rem;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(167, 139, 250, 0.15) 100%);
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+/* --- Certificate Lightbox --- */
+.certificate-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-lightbox.active {
+    opacity: 1;
+}
+
+.certificate-lightbox.closing {
+    opacity: 0;
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 95vw;
+    max-height: 95vh;
+    padding: 2rem;
+    z-index: 1;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(96, 165, 250, 0.3);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+}
+
+.lightbox-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
 }

@@ -41,18 +41,26 @@ function initSectionNavigation() {
     if (!sections.length) return;
 
     const observer = new IntersectionObserver((entries) => {
+        let maxRatio = 0;
+        let maxEntry = null;
+        
         entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const id = `#${entry.target.id}`;
-                navLinks.forEach((link) => {
-                    link.classList.toggle('active', link.getAttribute('href') === id);
-                });
+            if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+                maxRatio = entry.intersectionRatio;
+                maxEntry = entry;
             }
         });
+        
+        if (maxEntry) {
+            const id = `#${maxEntry.target.id}`;
+            navLinks.forEach((link) => {
+                link.classList.toggle('active', link.getAttribute('href') === id);
+            });
+        }
     }, {
         root: null,
-        threshold: 0.35,
-        rootMargin: '-20% 0px -35% 0px'
+        threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5],
+        rootMargin: '-10% 0px -40% 0px'
     });
 
     sections.forEach((section) => observer.observe(section));
@@ -95,7 +103,10 @@ function initCertificateCarousel() {
 
     slides.forEach((slide, index) => {
         slide.addEventListener('click', () => {
-            if (index !== currentIndex) {
+            if (index === currentIndex) {
+                // Open lightbox for active certificate
+                openCertificateLightbox(slide);
+            } else {
                 goTo(index);
             }
         });
@@ -110,6 +121,47 @@ function initCertificateCarousel() {
     });
 
     updateSlides();
+}
+
+function openCertificateLightbox(slide) {
+    const imgSrc = slide.querySelector('.certificate-visual img')?.src;
+    if (!imgSrc) return;
+
+    // Create lightbox
+    const lightbox = document.createElement('div');
+    lightbox.className = 'certificate-lightbox';
+    lightbox.innerHTML = `
+        <div class="lightbox-backdrop"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close">&times;</button>
+            <img src="${imgSrc}" alt="Certificate">
+        </div>
+    `;
+
+    document.body.appendChild(lightbox);
+    document.body.style.overflow = 'hidden';
+
+    // Add close handlers
+    const close = () => {
+        lightbox.classList.add('closing');
+        setTimeout(() => {
+            document.body.removeChild(lightbox);
+            document.body.style.overflow = '';
+        }, 300);
+    };
+
+    lightbox.querySelector('.lightbox-close').addEventListener('click', close);
+    lightbox.querySelector('.lightbox-backdrop').addEventListener('click', close);
+    
+    document.addEventListener('keydown', function escHandler(e) {
+        if (e.key === 'Escape') {
+            close();
+            document.removeEventListener('keydown', escHandler);
+        }
+    });
+
+    // Animate in
+    setTimeout(() => lightbox.classList.add('active'), 10);
 }
 
 function initCursorHalo() {
